@@ -1,0 +1,28 @@
+--- ./Makefile.org	Sun Jul  7 10:45:17 2002
++++ ./Makefile	Sat Jul 13 15:59:30 2002
+@@ -26,14 +26,17 @@
+ 	cd src/$@; make
+ 
+ install: all
+-	$(INSTALL) src/libxosdsh/libxosdsh.so $(LIBDIR)/libxosdsh.so.$(LIBRARY_VERSION)
+-	rm -f $(PREFIX)/lib/libxosdsh.so
+-	ln -s $(PREFIX)/lib/libxosdsh.so.$(LIBRARY_VERSION) $(PREFIX)/lib/libxosdsh.so
+-	$(INSTALL) src/libxosdsh/xosdsh.h $(INCLUDEDIR)
+-	$(INSTALL) src/osdsh/osdsh $(BINDIR)
+-	$(INSTALL) src/osdctl/osdctl $(BINDIR)
+-	mkdir -p $(DOCDIR)
+-	$(INSTALL) README $(DOCDIR)
++	$(INSTALL) -d $(DESTDIR)$(LIBDIR)
++	$(INSTALL) -d $(DESTDIR)$(INCLUDEDIR)
++	$(INSTALL) -d $(DESTDIR)$(BINDIR)
++	$(INSTALL) -d $(DESTDIR)$(DOCDIR)
++	$(INSTALL) src/libxosdsh/libxosdsh.so $(DESTDIR)$(LIBDIR)/libxosdsh.so.$(LIBRARY_VERSION)
++	rm -f $(DESTDIR)$(LIBDIR)/libxosdsh.so
++	ln -s $(LIBDIR)/libxosdsh.so.$(LIBRARY_VERSION) $(DESTDIR)$(LIBDIR)/libxosdsh.so
++	$(INSTALL) src/libxosdsh/xosdsh.h $(DESTDIR)$(INCLUDEDIR)
++	$(INSTALL) src/osdsh/osdsh $(DESTDIR)$(BINDIR)
++	$(INSTALL) src/osdctl/osdctl $(DESTDIR)$(BINDIR)
++	$(INSTALL) README $(DESTDIR)$(DOCDIR)
+ 
+ clean:
+ 	cd src/libxosdsh; make clean
