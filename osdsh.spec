@@ -6,6 +6,7 @@ Release:	3
 License:	GPL
 Group:		X11/Applications
 Source0:	http://telia.dl.sourceforge.net/sourceforge/osdsh/%{name}%{version}.tar.gz
+# Source0-md5:	3363072ceba34b5c84328f8741924199
 Source1:	%{name}.desktop
 Source2:	osd_keymapconfig.desktop
 Source3:	osd_tkosdshconfig.desktop
