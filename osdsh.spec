@@ -2,7 +2,7 @@ Summary:	On Screen Display (like in TV) for X11
 Summary(pl):	Wy¶wietlanie napisów na ekranie podobnie jak w telewizorach (OSD)
 Name:		osdsh
 Version:	0.5.2
-Release:	2
+Release:	3
 License:	GPL
 Group:		X11/Applications
 Source0:	http://telia.dl.sourceforge.net/sourceforge/osdsh/%{name}%{version}.tar.gz
@@ -75,5 +75,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%attr(644,root,root) %{_libdir}/libx*.so
+%attr(644,root,root) %{_libdir}/lib*.so
 %{_includedir}/*.h
