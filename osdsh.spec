@@ -17,7 +17,6 @@ BuildRequires:	gtk+-devel
 BuildRequires:	xosd-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
 
 %description
 Display clock, battery, connection and volume with the xosdlib. The
