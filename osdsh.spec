@@ -5,11 +5,11 @@ Version:	0.5.2
 Release:	3
 License:	GPL
 Group:		X11/Applications
-Source0:	http://dl.sourceforge.net/sourceforge/%{name}/%{name}%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/osdsh/%{name}%{version}.tar.gz
 # Source0-md5:	3363072ceba34b5c84328f8741924199
 Source1:	%{name}.desktop
 Source2:	osd_keymapconfig.desktop
-Source3:	osd_tkosdshconfig.desktop
+Source3:	osd_tk%{name}config.desktop
 Patch0:		%{name}-DESTDIR.patch
 URL:		http://sourceforge.net/projects/osdsh/
 BuildRequires:	XFree86-devel
@@ -51,7 +51,8 @@ Pliki pozwalaj±ce tworzyæ programy w oparciu o osdsh.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT PREFIX=%{_prefix}
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT PREFIX=%{_prefix}
 
 install tkosdshconfig		$RPM_BUILD_ROOT%{_bindir}
 install HOWTO/keymapconfig	$RPM_BUILD_ROOT%{_bindir}
@@ -75,5 +76,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%attr(644,root,root) %{_libdir}/lib*.so
+%{_libdir}/lib*.so
 %{_includedir}/*.h
