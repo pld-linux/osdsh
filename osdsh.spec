@@ -33,7 +33,7 @@ ekranu.
 Summary:	Header files and documentation for developers of osdsh
 Summary(pl):	Pliki nag³ówkowe oraz dokumentcja dla programistów osdsh
 Group:		X11/Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Files allowing development of osdsh-based applications.
