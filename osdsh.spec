@@ -1,5 +1,5 @@
 Summary:	On Screen Display (like in TV) for X11
-Summary(pl):	Wy¶wietlanie napisów na ekranie podobnie jak w telewizorach (OSD)
+Summary(pl.UTF-8):   WyÅ›wietlanie napisÃ³w na ekranie podobnie jak w telewizorach (OSD)
 Name:		osdsh
 Version:	0.5.2
 Release:	3
@@ -24,22 +24,22 @@ Display clock, battery, connection and volume with the xosdlib. The
 options can be changed while running and can be different for each
 display.
 
-%description -l pl
-Wy¶wietla zegar, baterie, po³±czenia oraz g³o¶no¶æ za pomoc± xosdlib.
-Opcje mog± byæ zmieniane w czasie pracy i mog± byæ ró¿ne dla ka¿dego
+%description -l pl.UTF-8
+WyÅ›wietla zegar, baterie, poÅ‚Ä…czenia oraz gÅ‚oÅ›noÅ›Ä‡ za pomocÄ… xosdlib.
+Opcje mogÄ… byÄ‡ zmieniane w czasie pracy i mogÄ… byÄ‡ rÃ³Å¼ne dla kaÅ¼dego
 ekranu.
 
 %package devel
 Summary:	Header files and documentation for developers of osdsh
-Summary(pl):	Pliki nag³ówkowe oraz dokumentcja dla programistów osdsh
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe oraz dokumentcja dla programistÃ³w osdsh
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Files allowing development of osdsh-based applications.
 
-%description devel -l pl
-Pliki pozwalaj±ce tworzyæ programy w oparciu o osdsh.
+%description devel -l pl.UTF-8
+Pliki pozwalajÄ…ce tworzyÄ‡ programy w oparciu o osdsh.
 
 %prep
 %setup  -q
