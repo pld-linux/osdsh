@@ -1,5 +1,5 @@
 Summary:	On Screen Display (like in TV) for X11
-Summary(pl.UTF-8):   Wyświetlanie napisów na ekranie podobnie jak w telewizorach (OSD)
+Summary(pl.UTF-8):	Wyświetlanie napisów na ekranie podobnie jak w telewizorach (OSD)
 Name:		osdsh
 Version:	0.5.2
 Release:	3
@@ -31,7 +31,7 @@ ekranu.
 
 %package devel
 Summary:	Header files and documentation for developers of osdsh
-Summary(pl.UTF-8):   Pliki nagłówkowe oraz dokumentcja dla programistów osdsh
+Summary(pl.UTF-8):	Pliki nagłówkowe oraz dokumentcja dla programistów osdsh
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
