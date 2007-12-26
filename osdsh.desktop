@@ -2,11 +2,7 @@
 Type=Application
 Exec=osdsh
 Icon=
-MiniIcon=
 Comment=
-Comment[de]=
 Terminal=false
 Name=osdsh
-Name[de]=osdsh
-Name[en]=osdsh
 # vi: encoding=utf-8

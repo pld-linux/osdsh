@@ -2,11 +2,7 @@
 Type=Application
 Exec=keymapconfig
 Icon=
-MiniIcon=
 Comment=
-Comment[de]=
 Terminal=false
 Name=OSD keymapconfig
-Name[de]=OSD keymapconfig
-Name[en]=OSD keymapconfig
 # vi: encoding=utf-8

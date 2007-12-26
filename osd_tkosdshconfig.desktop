@@ -2,11 +2,7 @@
 Type=Application
 Exec=tkosdshconfig
 Icon=
-MiniIcon=
 Comment=
-Comment[de]=
 Terminal=false
 Name=OSD tkosdshconfig
-Name[de]=OSD tkosdshconfig
-Name[en]=OSD tkosdshconfig
 # vi: encoding=utf-8
