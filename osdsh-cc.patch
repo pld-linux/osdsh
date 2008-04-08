@@ -1,0 +1,28 @@
+--- osdsh-0.5.2.orig/src/osdctl/Makefile	2002-06-30 23:33:02.000000000 +0200
++++ osdsh-0.5.2/src/osdctl/Makefile	2008-04-08 19:45:29.865136893 +0200
+@@ -10,7 +10,7 @@
+ all: osdctl
+ 
+ osdctl:
+-	gcc $(LIBDIR) $(LIBS) $(CFLAGS) -o $@ $@.c
++	$(CC) $(LIBDIR) $(LIBS) $(CFLAGS) -o $@ $@.c
+ 
+ clean: 
+ 	rm osdctl
+--- osdsh-0.5.2.orig/src/osdsh/Makefile	2002-07-08 17:10:02.000000000 +0200
++++ osdsh-0.5.2/src/osdsh/Makefile	2008-04-08 19:46:22.150969786 +0200
+@@ -12,11 +12,11 @@
+ 
+ %.o: %.c
+ 
+-	gcc -c $<
++	$(CC) -c $<
+ 
+ osdsh: $(OBJS)
+-	gcc -c $(CFLAGS) $@.c
+-	gcc $(CFLAGS) -o $@ $(OBJS) $(LIBS)
++	$(CC) -c $(CFLAGS) $@.c
++	$(CC) $(CFLAGS) -o $@ $(OBJS) $(LIBS)
+ 
+ clean:
+ 	rm osdsh
