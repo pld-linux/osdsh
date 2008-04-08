@@ -11,6 +11,7 @@ Source1:	%{name}.desktop
 Source2:	osd_keymapconfig.desktop
 Source3:	osd_tk%{name}config.desktop
 Patch0:		%{name}-DESTDIR.patch
+Patch1:		%{name}-cc.patch
 URL:		http://sourceforge.net/projects/osdsh/
 BuildRequires:	XFree86-devel
 BuildRequires:	apmd-devel
@@ -44,22 +45,29 @@ Pliki pozwalające tworzyć programy w oparciu o osdsh.
 %prep
 %setup  -q
 %patch0 -p1
+%patch1 -p1
 
 %build
-%{__make}
+mv data/README data/README.data
+mv HOWTO/README HOWTO/README.howto
+
+%{__make} \
+	CC="%{__cc}" \
+	CFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_desktopdir}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT PREFIX=%{_prefix}
 
 install tkosdshconfig		$RPM_BUILD_ROOT%{_bindir}
 install HOWTO/keymapconfig	$RPM_BUILD_ROOT%{_bindir}
-install -d $RPM_BUILD_ROOT{%{_applnkdir}/Tools,%{_applnkdir}/Settings}
-install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Tools
-install %{SOURCE2} $RPM_BUILD_ROOT%{_applnkdir}/Settings
-install %{SOURCE3} $RPM_BUILD_ROOT%{_applnkdir}/Settings
+
+install %{SOURCE1} %{SOURCE2} %{SOURCE3} $RPM_BUILD_ROOT%{_desktopdir}
+
+rm -rf $RPM_BUILD_ROOT/usr/doc
 
 %post	-p /sbin/ldconfig
 %postun	-p /sbin/ldconfig
@@ -69,10 +77,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README* data/* HOWTO/{*.html,README}
+%doc README* data/* HOWTO/{*.html,README.howto}
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so.*
-%{_applnkdir}/*/*
+%{_desktopdir}/*.desktop
 
 %files devel
 %defattr(644,root,root,755)
